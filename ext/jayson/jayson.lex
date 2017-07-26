@@ -27,8 +27,8 @@ CHAR [A-Za-z0-9 ]+
   *yylval = rb_str_new(yytext+1, yyleng-2U);
   return TOK_STRING;
 }
-({INT}|{INT}{FRAC}|{INT}{EXP}|{INT}{FRAC}{EXP}) {
-  *yylval = rb_str_new(yytext+1, yyleng-2U);
+{INT} { // |{INT}{FRAC}|{INT}{EXP}|{INT}{FRAC}{EXP}
+  *yylval = INT2NUM(atoi(yytext));
   return TOK_NUMBER;
 }
 {OBJ_START} {

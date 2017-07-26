@@ -46,7 +46,8 @@ object_with_key_value_pairs: OBJ_START key COLON value OBJ_END {
                            };
 key: STRING { $$ = $1; };
 
-value: STRING { $$ = $1; };
+value: STRING { $$ = $1; }
+   | NUMBER { $$ = $1; };
 %%
 
 void yyerror(YYLTYPE *locp, yyscan_t scanner, VALUE *object, char const *msg)

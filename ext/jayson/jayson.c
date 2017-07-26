@@ -397,16 +397,16 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  9
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   6
+#define YYLAST   8
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  8
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  7
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  8
+#define YYNRULES  9
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  14
+#define YYNSTATES  15
 
 /* YYTRANSLATE[YYX] -- Symbol number corresponding to YYX as returned
    by yylex, with out-of-bounds checking.  */
@@ -453,7 +453,7 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    35,    35,    37,    38,    40,    42,    47,    49
+       0,    35,    35,    37,    38,    40,    42,    47,    49,    50
 };
 #endif
 
@@ -477,10 +477,10 @@ static const yytype_uint16 yytoknum[] =
 };
 # endif
 
-#define YYPACT_NINF -5
+#define YYPACT_NINF -7
 
 #define yypact_value_is_default(Yystate) \
-  (!!((Yystate) == (-5)))
+  (!!((Yystate) == (-7)))
 
 #define YYTABLE_NINF -1
 
@@ -491,8 +491,8 @@ static const yytype_uint16 yytoknum[] =
      STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-      -2,    -4,     1,    -5,    -5,    -5,    -5,    -5,    -3,    -5,
-       2,    -5,    -1,    -5
+       1,    -4,     5,    -7,    -7,    -7,    -7,    -7,    -6,    -7,
+       0,    -7,    -7,     2,    -7
 };
 
   /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -501,19 +501,19 @@ static const yytype_int8 yypact[] =
 static const yytype_uint8 yydefact[] =
 {
        0,     0,     0,     2,     3,     4,     7,     5,     0,     1,
-       0,     8,     0,     6
+       0,     9,     8,     0,     6
 };
 
   /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-      -5,    -5,    -5,    -5,    -5,    -5,    -5
+      -7,    -7,    -7,    -7,    -7,    -7,    -7
 };
 
   /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-      -1,     2,     3,     4,     5,     8,    12
+      -1,     2,     3,     4,     5,     8,    13
 };
 
   /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -521,12 +521,12 @@ static const yytype_int8 yydefgoto[] =
      number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_uint8 yytable[] =
 {
-       6,     9,     7,     1,    10,    13,    11
+       6,    10,     7,    11,    12,     9,     1,     0,    14
 };
 
-static const yytype_uint8 yycheck[] =
+static const yytype_int8 yycheck[] =
 {
-       4,     0,     6,     5,     7,     6,     4
+       4,     7,     6,     3,     4,     0,     5,    -1,     6
 };
 
   /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
@@ -534,19 +534,19 @@ static const yytype_uint8 yycheck[] =
 static const yytype_uint8 yystos[] =
 {
        0,     5,     9,    10,    11,    12,     4,     6,    13,     0,
-       7,     4,    14,     6
+       7,     3,     4,    14,     6
 };
 
   /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_uint8 yyr1[] =
 {
-       0,     8,     9,    10,    10,    11,    12,    13,    14
+       0,     8,     9,    10,    10,    11,    12,    13,    14,    14
 };
 
   /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
 static const yytype_uint8 yyr2[] =
 {
-       0,     2,     1,     1,     1,     2,     5,     1,     1
+       0,     2,     1,     1,     1,     2,     5,     1,     1,     1
 };
 
 
@@ -1371,8 +1371,14 @@ yyreduce:
 #line 1372 "jayson.c" /* yacc.c:1661  */
     break;
 
+  case 9:
+#line 50 "jayson.y" /* yacc.c:1661  */
+    { (yyval) = (yyvsp[0]); }
+#line 1378 "jayson.c" /* yacc.c:1661  */
+    break;
 
-#line 1376 "jayson.c" /* yacc.c:1661  */
+
+#line 1382 "jayson.c" /* yacc.c:1661  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1607,7 +1613,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 50 "jayson.y" /* yacc.c:1906  */
+#line 51 "jayson.y" /* yacc.c:1906  */
 
 
 void yyerror(YYLTYPE *locp, yyscan_t scanner, VALUE *object, char const *msg)
