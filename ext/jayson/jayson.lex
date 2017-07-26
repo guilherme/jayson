@@ -19,16 +19,16 @@ FRAC .{DIGITS}
 E [eE][+-]?
 EXP E?{DIGITS}
 INT -?({DIGIT}|{DIGIT1}{DIGITS})
-
+COLON :
 CHAR [A-Za-z0-9 ]+
 
 %%
 \"{CHAR}*\" {
-  *yylval = rb_str_new(&yytext[1], yyleng-2U);
+  *yylval = rb_str_new(yytext+1, yyleng-2U);
   return TOK_STRING;
 }
 ({INT}|{INT}{FRAC}|{INT}{EXP}|{INT}{FRAC}{EXP}) {
-  *yylval = rb_str_new(&yytext[1], yyleng-2U);
+  *yylval = rb_str_new(yytext+1, yyleng-2U);
   return TOK_NUMBER;
 }
 {OBJ_START} {
@@ -38,4 +38,8 @@ CHAR [A-Za-z0-9 ]+
 {OBJ_END} {
   return TOK_OBJ_END;
 }
+{COLON} {
+  return TOK_COLON;
+}
 %%
+

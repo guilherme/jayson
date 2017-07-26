@@ -6,6 +6,7 @@
  #include "jayson.h"
  #include "jayson.lexer.h"
  void yyerror(YYLTYPE *locp, yyscan_t scanner, VALUE *object, char const *msg);
+
 %}
 %define api.value.type {VALUE}
 %define api.pure full
@@ -20,9 +21,24 @@
 %token STRING
 %token OBJ_START
 %token OBJ_END
+%token COLON
 
 %%
-program: OBJ_START OBJ_END { *object = rb_hash_new(); };
+program: object { *object = $1; };
+
+object: empty_object { $$ = $1; }
+      | object_with_key_value_pairs { $$ = $1; };
+
+empty_object: OBJ_START OBJ_END { $$ = rb_hash_new(); };
+
+object_with_key_value_pairs: OBJ_START key COLON value OBJ_END {
+                           VALUE hash = rb_hash_new();
+                           rb_hash_aset((VALUE)hash, $2, $4);
+                           $$ = hash;
+                           };
+key: STRING { $$ = $1; };
+
+value: STRING { $$ = $1; };
 %%
 
 void yyerror(YYLTYPE *locp, yyscan_t scanner, VALUE *object, char const *msg)
