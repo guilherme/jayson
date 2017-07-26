@@ -18,11 +18,11 @@
 
 %token NUMBER
 %token STRING
-%token OBJECT
+%token OBJ_START
+%token OBJ_END
 
 %%
-program: OBJECT { *object = rb_hash_new(); };
-
+program: OBJ_START OBJ_END { *object = rb_hash_new(); };
 %%
 
 void yyerror(YYLTYPE *locp, yyscan_t scanner, VALUE *object, char const *msg)

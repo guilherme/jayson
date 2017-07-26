@@ -47,7 +47,8 @@ extern int yydebug;
   {
     TOK_NUMBER = 258,
     TOK_STRING = 259,
-    TOK_OBJECT = 260
+    TOK_OBJ_START = 260,
+    TOK_OBJ_END = 261
   };
 #endif
 

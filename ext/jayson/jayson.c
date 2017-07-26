@@ -109,7 +109,8 @@ extern int yydebug;
   {
     TOK_NUMBER = 258,
     TOK_STRING = 259,
-    TOK_OBJECT = 260
+    TOK_OBJ_START = 260,
+    TOK_OBJ_END = 261
   };
 #endif
 
@@ -142,7 +143,7 @@ int yyparse (yyscan_t scanner, VALUE *object);
 
 /* Copy the second part of user declarations.  */
 
-#line 146 "jayson.c" /* yacc.c:358  */
+#line 147 "jayson.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -384,23 +385,23 @@ union yyalloc
 #endif /* !YYCOPY_NEEDED */
 
 /* YYFINAL -- State number of the termination state.  */
-#define YYFINAL  3
+#define YYFINAL  4
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   1
+#define YYLAST   2
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  6
+#define YYNTOKENS  7
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  2
 /* YYNRULES -- Number of rules.  */
 #define YYNRULES  2
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  4
+#define YYNSTATES  5
 
 /* YYTRANSLATE[YYX] -- Symbol number corresponding to YYX as returned
    by yylex, with out-of-bounds checking.  */
 #define YYUNDEFTOK  2
-#define YYMAXUTOK   260
+#define YYMAXUTOK   261
 
 #define YYTRANSLATE(YYX)                                                \
   ((unsigned int) (YYX) <= YYMAXUTOK ? yytranslate[YYX] : YYUNDEFTOK)
@@ -435,14 +436,14 @@ static const yytype_uint8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     1,     2,     3,     4,
-       5
+       5,     6
 };
 
 #if YYDEBUG
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    24,    24
+       0,    25,    25
 };
 #endif
 
@@ -451,8 +452,8 @@ static const yytype_uint8 yyrline[] =
    First, the terminals, then, starting at YYNTOKENS, nonterminals.  */
 static const char *const yytname[] =
 {
-  "$end", "error", "$undefined", "NUMBER", "STRING", "OBJECT", "$accept",
-  "program", YY_NULLPTR
+  "$end", "error", "$undefined", "NUMBER", "STRING", "OBJ_START",
+  "OBJ_END", "$accept", "program", YY_NULLPTR
 };
 #endif
 
@@ -461,7 +462,7 @@ static const char *const yytname[] =
    (internal) symbol number NUM (which must be that of a token).  */
 static const yytype_uint16 yytoknum[] =
 {
-       0,   256,   257,   258,   259,   260
+       0,   256,   257,   258,   259,   260,   261
 };
 # endif
 
@@ -479,7 +480,7 @@ static const yytype_uint16 yytoknum[] =
      STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-      -5,    -6,     1,    -6
+      -5,    -4,     1,    -6,    -6
 };
 
   /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -487,7 +488,7 @@ static const yytype_int8 yypact[] =
      means the default is an error.  */
 static const yytype_uint8 yydefact[] =
 {
-       0,     2,     0,     1
+       0,     0,     0,     2,     1
 };
 
   /* YYPGOTO[NTERM-NUM].  */
@@ -507,31 +508,31 @@ static const yytype_int8 yydefgoto[] =
      number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_uint8 yytable[] =
 {
-       1,     3
+       1,     4,     3
 };
 
 static const yytype_uint8 yycheck[] =
 {
-       5,     0
+       5,     0,     6
 };
 
   /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
      symbol of state STATE-NUM.  */
 static const yytype_uint8 yystos[] =
 {
-       0,     5,     7,     0
+       0,     5,     8,     6,     0
 };
 
   /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
 static const yytype_uint8 yyr1[] =
 {
-       0,     6,     7
+       0,     7,     8
 };
 
   /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
 static const yytype_uint8 yyr2[] =
 {
-       0,     2,     1
+       0,     2,     2
 };
 
 
@@ -1311,13 +1312,13 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 24 "jayson.y" /* yacc.c:1661  */
+#line 25 "jayson.y" /* yacc.c:1661  */
     { *object = rb_hash_new(); }
-#line 1317 "jayson.c" /* yacc.c:1661  */
+#line 1318 "jayson.c" /* yacc.c:1661  */
     break;
 
 
-#line 1321 "jayson.c" /* yacc.c:1661  */
+#line 1322 "jayson.c" /* yacc.c:1661  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires

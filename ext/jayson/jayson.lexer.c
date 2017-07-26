@@ -350,8 +350,8 @@ static void yy_fatal_error (yyconst char msg[] ,yyscan_t yyscanner );
 	*yy_cp = '\0'; \
 	yyg->yy_c_buf_p = yy_cp;
 
-#define YY_NUM_RULES 4
-#define YY_END_OF_BUFFER 5
+#define YY_NUM_RULES 5
+#define YY_END_OF_BUFFER 6
 struct yy_trans_info
 	{
 	flex_int16_t yy_verify;
@@ -386,7 +386,7 @@ static yyconst struct yy_trans_info yy_transition[3405] =
  { 107, 260 }, { 108, 260 }, { 109, 260 }, { 110, 260 }, { 111, 260 },
  { 112, 260 }, { 113, 260 }, { 114, 260 }, { 115, 260 }, { 116, 260 },
  { 117, 260 }, { 118, 260 }, { 119, 260 }, { 120, 260 }, { 121, 260 },
- { 122, 260 }, { 123, 264 }, { 124, 260 }, { 125, 260 }, { 126, 260 },
+ { 122, 260 }, { 123, 264 }, { 124, 260 }, { 125, 266 }, { 126, 260 },
  { 127, 260 }, { 128, 260 }, {   0,   0 }, {   0,3145 }, {   1, 130 },
  {   2, 130 }, {   3, 130 }, {   4, 130 }, {   5, 130 }, {   6, 130 },
  {   7, 130 }, {   8, 130 }, {   9, 130 }, {  10, 130 }, {  11, 130 },
@@ -415,15 +415,15 @@ static yyconst struct yy_trans_info yy_transition[3405] =
  { 112, 130 }, { 113, 130 }, { 114, 130 }, { 115, 130 }, { 116, 130 },
 
  { 117, 130 }, { 118, 130 }, { 119, 130 }, { 120, 130 }, { 121, 130 },
- { 122, 130 }, { 123, 134 }, { 124, 130 }, { 125, 130 }, { 126, 130 },
- { 127, 130 }, { 128, 130 }, {   0,   4 }, {   0,3015 }, {   0,   4 },
- {   0,3013 }, {   0,   4 }, {   0,3011 }, {   0,   1 }, {   0,3009 },
- {   0,   3 }, {   0,3007 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
+ { 122, 130 }, { 123, 134 }, { 124, 130 }, { 125, 136 }, { 126, 130 },
+ { 127, 130 }, { 128, 130 }, {   0,   5 }, {   0,3015 }, {   0,   5 },
+ {   0,3013 }, {   0,   3 }, {   0,3011 }, {   0,   4 }, {   0,3009 },
+ {   0,   1 }, {   0,3007 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
  {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
  {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
  {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
  {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
- {   0,   0 }, {   0,   0 }, {  32, 411 }, {   0,   0 }, {  34,   4 },
+ {   0,   0 }, {   0,   0 }, {  32, 411 }, {   0,   0 }, {  34,   6 },
 
  {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
  {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
@@ -437,14 +437,14 @@ static yyconst struct yy_trans_info yy_transition[3405] =
  {  80, 411 }, {  81, 411 }, {  82, 411 }, {  83, 411 }, {  84, 411 },
 
  {  85, 411 }, {  86, 411 }, {  87, 411 }, {  88, 411 }, {  89, 411 },
- {  90, 411 }, {   0,   4 }, {   0,2921 }, {   0,   0 }, {   0,   0 },
+ {  90, 411 }, {   0,   5 }, {   0,2921 }, {   0,   0 }, {   0,   0 },
  {   0,   0 }, {   0,   0 }, {  97, 411 }, {  98, 411 }, {  99, 411 },
  { 100, 411 }, { 101, 411 }, { 102, 411 }, { 103, 411 }, { 104, 411 },
  { 105, 411 }, { 106, 411 }, { 107, 411 }, { 108, 411 }, { 109, 411 },
  { 110, 411 }, { 111, 411 }, { 112, 411 }, { 113, 411 }, { 114, 411 },
  { 115, 411 }, { 116, 411 }, { 117, 411 }, { 118, 411 }, { 119, 411 },
  { 120, 411 }, { 121, 411 }, { 122, 411 }, {   0,   0 }, {   0,   0 },
- {   0,   0 }, {   0,   0 }, { 125,   4 }, {   0,   0 }, {   0,   0 },
+ {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
  {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
 
  {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
@@ -515,7 +515,7 @@ static yyconst struct yy_trans_info yy_transition[3405] =
 
  {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
  {   0,   0 }, {   0,   0 }, {   0,   0 }, {  32,   0 }, {   0,   0 },
- {  34,-407 }, {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
+ {  34,-405 }, {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
  {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
  {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 }, {  48,   0 },
  {  49,   0 }, {  50,   0 }, {  51,   0 }, {  52,   0 }, {  53,   0 },
@@ -1079,7 +1079,7 @@ static yyconst struct yy_trans_info yy_transition[3405] =
  {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
  {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
  {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 }, {   0,   0 },
- {   0,   0 }, {   0,   0 }, { 129,   5 }, {   1,   0 },    };
+ {   0,   0 }, {   0,   0 }, { 129,   6 }, {   1,   0 },    };
 
 static yyconst struct yy_trans_info *yy_start_state_list[3] =
     {
@@ -1326,7 +1326,7 @@ YY_DECL
 	register int yy_act;
     struct yyguts_t * yyg = (struct yyguts_t*)yyscanner;
 
-#line 24 "jayson.lex"
+#line 25 "jayson.lex"
 
 #line 1332 "jayson.lexer.c"
 
@@ -1412,7 +1412,7 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 25 "jayson.lex"
+#line 26 "jayson.lex"
 {
   *yylval = rb_str_new(&yytext[1], yyleng-2U);
   return TOK_STRING;
@@ -1420,7 +1420,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 29 "jayson.lex"
+#line 30 "jayson.lex"
 {
   *yylval = rb_str_new(&yytext[1], yyleng-2U);
   return TOK_NUMBER;
@@ -1428,18 +1428,24 @@ YY_RULE_SETUP
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 33 "jayson.lex"
+#line 34 "jayson.lex"
 {
-  *yylval = rb_str_new(&yytext[1], yyleng-2U);
-  return TOK_OBJECT;
+  return TOK_OBJ_START;
 }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 37 "jayson.lex"
+#line 38 "jayson.lex"
+{
+  return TOK_OBJ_END;
+}
+	YY_BREAK
+case 5:
+YY_RULE_SETUP
+#line 41 "jayson.lex"
 ECHO;
 	YY_BREAK
-#line 1443 "jayson.lexer.c"
+#line 1449 "jayson.lexer.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2573,7 +2579,7 @@ void yyfree (void * ptr , yyscan_t yyscanner)
 
 #define YYTABLES_NAME "yytables"
 
-#line 37 "jayson.lex"
+#line 41 "jayson.lex"
 
 
 

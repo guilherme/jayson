@@ -10,7 +10,8 @@ void yyerror(char *);
 %option fast
 %option nounput noyywrap noinput
 
-OBJECT \{\}
+OBJ_START \{
+OBJ_END \}
 DIGIT [0-9]+
 DIGIT1 [1-9]+
 DIGITS ({DIGIT}{DIGIT}*)
@@ -30,8 +31,11 @@ CHAR [A-Za-z0-9 ]+
   *yylval = rb_str_new(&yytext[1], yyleng-2U);
   return TOK_NUMBER;
 }
-{OBJECT} {
-  *yylval = rb_str_new(&yytext[1], yyleng-2U);
-  return TOK_OBJECT;
+{OBJ_START} {
+  return TOK_OBJ_START;
+}
+
+{OBJ_END} {
+  return TOK_OBJ_END;
 }
 %%
