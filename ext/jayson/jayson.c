@@ -72,8 +72,16 @@
  #include "jayson.lexer.h"
  void yyerror(YYLTYPE *locp, yyscan_t scanner, VALUE *object, char const *msg);
 
+static void d(VALUE v) {
+  printf("START DEBUG ---------\n");
+    ID sym_puts = rb_intern("puts");
+    ID sym_inspect = rb_intern("inspect");
+    rb_funcall(rb_mKernel, sym_puts, 1,
+        rb_funcall(v, sym_inspect, 0));
+  printf("END DEBUG ---------\n");
+}
 
-#line 77 "jayson.c" /* yacc.c:339  */
+#line 85 "jayson.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -145,7 +153,7 @@ int yyparse (yyscan_t scanner, VALUE *object);
 
 /* Copy the second part of user declarations.  */
 
-#line 149 "jayson.c" /* yacc.c:358  */
+#line 157 "jayson.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -445,7 +453,7 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    27,    27,    29,    30,    32,    34,    39,    41
+       0,    35,    35,    37,    38,    40,    42,    47,    49
 };
 #endif
 
@@ -1318,53 +1326,53 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 27 "jayson.y" /* yacc.c:1661  */
+#line 35 "jayson.y" /* yacc.c:1661  */
     { *object = (yyvsp[0]); }
-#line 1324 "jayson.c" /* yacc.c:1661  */
+#line 1332 "jayson.c" /* yacc.c:1661  */
     break;
 
   case 3:
-#line 29 "jayson.y" /* yacc.c:1661  */
+#line 37 "jayson.y" /* yacc.c:1661  */
     { (yyval) = (yyvsp[0]); }
-#line 1330 "jayson.c" /* yacc.c:1661  */
+#line 1338 "jayson.c" /* yacc.c:1661  */
     break;
 
   case 4:
-#line 30 "jayson.y" /* yacc.c:1661  */
+#line 38 "jayson.y" /* yacc.c:1661  */
     { (yyval) = (yyvsp[0]); }
-#line 1336 "jayson.c" /* yacc.c:1661  */
+#line 1344 "jayson.c" /* yacc.c:1661  */
     break;
 
   case 5:
-#line 32 "jayson.y" /* yacc.c:1661  */
+#line 40 "jayson.y" /* yacc.c:1661  */
     { (yyval) = rb_hash_new(); }
-#line 1342 "jayson.c" /* yacc.c:1661  */
+#line 1350 "jayson.c" /* yacc.c:1661  */
     break;
 
   case 6:
-#line 34 "jayson.y" /* yacc.c:1661  */
+#line 42 "jayson.y" /* yacc.c:1661  */
     {
                            VALUE hash = rb_hash_new();
                            rb_hash_aset((VALUE)hash, (yyvsp[-3]), (yyvsp[-1]));
                            (yyval) = hash;
                            }
-#line 1352 "jayson.c" /* yacc.c:1661  */
+#line 1360 "jayson.c" /* yacc.c:1661  */
     break;
 
   case 7:
-#line 39 "jayson.y" /* yacc.c:1661  */
+#line 47 "jayson.y" /* yacc.c:1661  */
     { (yyval) = (yyvsp[0]); }
-#line 1358 "jayson.c" /* yacc.c:1661  */
+#line 1366 "jayson.c" /* yacc.c:1661  */
     break;
 
   case 8:
-#line 41 "jayson.y" /* yacc.c:1661  */
+#line 49 "jayson.y" /* yacc.c:1661  */
     { (yyval) = (yyvsp[0]); }
-#line 1364 "jayson.c" /* yacc.c:1661  */
+#line 1372 "jayson.c" /* yacc.c:1661  */
     break;
 
 
-#line 1368 "jayson.c" /* yacc.c:1661  */
+#line 1376 "jayson.c" /* yacc.c:1661  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1599,7 +1607,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 42 "jayson.y" /* yacc.c:1906  */
+#line 50 "jayson.y" /* yacc.c:1906  */
 
 
 void yyerror(YYLTYPE *locp, yyscan_t scanner, VALUE *object, char const *msg)

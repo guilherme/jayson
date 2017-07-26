@@ -7,6 +7,14 @@
  #include "jayson.lexer.h"
  void yyerror(YYLTYPE *locp, yyscan_t scanner, VALUE *object, char const *msg);
 
+static void d(VALUE v) {
+  printf("START DEBUG ---------\n");
+    ID sym_puts = rb_intern("puts");
+    ID sym_inspect = rb_intern("inspect");
+    rb_funcall(rb_mKernel, sym_puts, 1,
+        rb_funcall(v, sym_inspect, 0));
+  printf("END DEBUG ---------\n");
+}
 %}
 %define api.value.type {VALUE}
 %define api.pure full
