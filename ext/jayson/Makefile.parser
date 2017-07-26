@@ -1,0 +1,5 @@
+all: build
+
+build: jayson.lex jayson.y
+	bison --output=jayson.c -d jayson.y
+	flex --header-file=jayson.lexer.h -o jayson.lexer.c jayson.lex
